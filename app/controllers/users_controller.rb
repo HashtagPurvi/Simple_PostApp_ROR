@@ -17,9 +17,10 @@ class UsersController < ApplicationController
 
   # Creates a New User Profile
   def create
-  	@user = User.new(params[user_params])
+  	@user = User.new(user_params)
   	if @user.save
-  		#
+  		flash[:success] = "Welcome To Your Profile"
+  		redirect_to @user
   	else
   		render 'new'
   	end
