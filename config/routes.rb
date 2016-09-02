@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'users/new'
 
   #Setting up the Root of the app
@@ -15,6 +17,11 @@ Rails.application.routes.draw do
 
   #Adding RESTFUL routes for User Model
   resources :users
+
+  #Adding named route for Sessions
+  get '/login', to:'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete 'login', to: 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

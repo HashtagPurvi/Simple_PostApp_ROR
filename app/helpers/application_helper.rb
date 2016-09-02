@@ -6,7 +6,7 @@ module ApplicationHelper
 		if(pageTitle.empty?)
 			baseTitle
 		else
-			pageTitle + "|" + baseTitle
+			pageTitle + " | " + baseTitle
 		end
 	end
 end
